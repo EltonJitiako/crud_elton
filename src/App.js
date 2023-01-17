@@ -1,6 +1,6 @@
 import './App.css';
 import Parse from 'parse/dist/parse.min.js';
-
+console.log(process.env.APP_ID)
 Parse.initialize(process.env.APP_ID, process.env.JS_KEY); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = 'https://parseapi.back4app.com/'  
 
