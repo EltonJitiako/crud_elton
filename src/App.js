@@ -135,7 +135,7 @@ function App() {
           <br />
           <p>By Elton Luiz Jitiako</p>
           <p>Made with:</p>
-          <p>Frontend: HTML5, CSS3, JavaScript, REACT. Hosted: GitHub pages</p>
+          <p>Frontend: HTML5, CSS3, JavaScript, REACT. Hosted: Vercel</p>
           <p>Backend: DB PostgreeSQL. Hosted: Back4App</p>
         </div>
         </div>
