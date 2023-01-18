@@ -1,11 +1,6 @@
 import './App.css';
 import Parse from 'parse/dist/parse.min.js';
 
-console.log('Teste1'+process.env['TZ']);
-console.log('Teste2'+process.env['NODE_ENV']);
-console.log('Teste3'+process.env);
-
-
 Parse.initialize(process.env['REACT_APP_APP_ID'], process.env['REACT_APP_JS_KEY']); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = 'https://parseapi.back4app.com/'  
 
@@ -110,6 +105,7 @@ function App() {
             <div style={{color: "blue"}}>Update</div>and
             <div style={{color: "red"}}>Delete</div>
           </h2>
+          <br />
           <div id='create'>
           <input id="username" type="text" placeholder="Username" />
           <input id="age" type="integer" placeholder="Age" />

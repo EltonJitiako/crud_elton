@@ -1,5 +1,5 @@
 .background {
-
+    background-image: url('./imagem/image1.jpg');
     background-size: cover;
     background-position: center;
     overflow: auto;
@@ -9,6 +9,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
+
 }
 
 
@@ -37,6 +38,9 @@
     overflow: auto;
     width: 600px;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -56,6 +60,9 @@
     overflow: auto;
     width: 600px;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #delete {
@@ -65,4 +72,7 @@
     overflow: auto;
     width: 600px;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
