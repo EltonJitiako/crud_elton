@@ -1,7 +1,12 @@
 import './App.css';
 import Parse from 'parse/dist/parse.min.js';
-console.log("testeeeeeeeeee" + process.env.APP_ID)
-Parse.initialize(process.env.APP_ID, process.env.JS_KEY); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+
+console.log('Teste1'+process.env['TZ']);
+console.log('Teste2'+process.env['NODE_ENV']);
+console.log('Teste3'+process.env['VERCEL_GIT_COMMIT_SHA']);
+
+
+Parse.initialize(process.env['APP_ID'], process.env['JS_KEY']); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = 'https://parseapi.back4app.com/'  
 
 //Saving your First Data Object on Back4App
