@@ -6,7 +6,7 @@ console.log('Teste2'+process.env['NODE_ENV']);
 console.log('Teste3'+process.env);
 
 
-Parse.initialize(process.env['APP_ID'], process.env['JS_KEY']); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+Parse.initialize(process.env['REACT_APP_APP_ID'], process.env['REACT_APP_JS_KEY']); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = 'https://parseapi.back4app.com/'  
 
 //Saving your First Data Object on Back4App
