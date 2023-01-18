@@ -3,7 +3,7 @@ import Parse from 'parse/dist/parse.min.js';
 
 console.log('Teste1'+process.env['TZ']);
 console.log('Teste2'+process.env['NODE_ENV']);
-console.log('Teste3'+process.env['VERCEL_GIT_COMMIT_SHA']);
+console.log('Teste3'+process.env);
 
 
 Parse.initialize(process.env['APP_ID'], process.env['JS_KEY']); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
