@@ -13,7 +13,7 @@ async function saveNewPerson() {
   person.set("age", age);
   try {
     let result = await person.save()
-        document.getElementById('displayCreate').innerText="Create "+result+" successfully";
+        document.getElementById('displayCreate').innerText="Create successfully";
     } catch(error) {
         document.getElementById('displayCreate').innerText="Something wrong....";
   } 
@@ -53,7 +53,7 @@ async function updatePerson() {
         try{
             //Save the Object
             result[0].save();
-            document.getElementById('displayUpdate').innerText="Update "+result[0]+" successfully";
+            document.getElementById('displayUpdate').innerText="Update successfully";
         }catch(error){
             document.getElementById('displayUpdate').innerText="Something wrong....";
         }
@@ -66,7 +66,7 @@ async function deletePerson() {
             const name = document.getElementById("username2").value;
             query.equalTo("name", name);
             const result = await query.find()
-            document.getElementById('displayDelete').innerText="Delete "+result[0]+" successfully";
+            document.getElementById('displayDelete').innerText="Delete successfully";
             result[0].destroy();
             
         }catch(error){
@@ -121,7 +121,7 @@ function App() {
           <div id='delete'>
             <input id="username2" type="text" placeholder="Username" />
             <button onClick={deletePerson}>Delete!</button>
-            <p id='displayDelete'></p>
+            <br><p id='displayDelete'></p></br>
           </div>
           <br />
           <br />
