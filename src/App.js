@@ -13,9 +13,9 @@ async function saveNewPerson() {
   person.set("age", age);
   try {
         await person.save()
-        document.getElementById('displayCreate').innerText="Create successfully";
+        alert("Create successfully");
     } catch(error) {
-        document.getElementById('displayCreate').innerText="Something wrong....";
+        alert("Something wrong....");
   } 
 
 }
@@ -35,7 +35,7 @@ async function retrievePerson() {
   
 
   } catch (error) {
-    console.log(`Failed to retrieve the object, with error code: ${error.message}`);
+    alert("Something wrong....");
   }
 }  
 
@@ -53,9 +53,9 @@ async function updatePerson() {
         try{
             //Save the Object
             result[0].save();
-            document.getElementById('displayUpdate').innerText="Update successfully";
+            alert("Update successfully");
         }catch(error){
-            document.getElementById('displayUpdate').innerText="Something wrong....";
+            alert("Something wrong....");
         }
     } 
 
@@ -66,11 +66,11 @@ async function deletePerson() {
             const name = document.getElementById("username2").value;
             query.equalTo("name", name);
             const result = await query.find()
-            document.getElementById('displayDelete').innerText="Delete successfully";
             result[0].destroy();
+            alert("Delete successfully");
             
         }catch(error){
-            document.getElementById('displayDelete').innerText="Something wrong....";
+            alert("Something wrong....");
         }
   } 
 
@@ -100,7 +100,6 @@ function App() {
             <input id="age" type="integer" placeholder="Age" />
             <button onClick={saveNewPerson}>CreateNew</button>
           </div>
-          <p id='displayCreate'></p>
           <br />
           <br />
           <div id='read'>
@@ -115,14 +114,12 @@ function App() {
             <input id="age2" type="integer" placeholder="New Age" />
             <button onClick={updatePerson}>Update</button>
           </div>
-          <p id='displayUpdate'></p>
           <br />
           <br />
           <div id='delete'>
             <input id="username2" type="text" placeholder="Username" />
             <button onClick={deletePerson}>Delete!</button>
           </div>
-          <p id='displayDelete'></p>
           <br />
           <br />
           <p>By Elton Luiz Jitiako</p>
