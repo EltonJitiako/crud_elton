@@ -121,7 +121,7 @@ function App() {
           <div id='delete'>
             <input id="username2" type="text" placeholder="Username" />
             <button onClick={deletePerson}>Delete!</button>
-            <br><p id='displayDelete'></p></br>
+            <p id='displayDelete'></p>
           </div>
           <br />
           <br />
