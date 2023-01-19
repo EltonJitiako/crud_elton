@@ -13,13 +13,12 @@ async function saveNewPerson() {
   person.set("age", age);
   try {
     let result = await person.save()
-        console.log("New object createsd: " + result);
+        document.getElementById('displayCreate').innerText="Create "+result+" successfully";
     } catch(error) {
-        console.log('Failed to create new object, with error code: ' + error.message);
-    }
+        document.getElementById('displayCreate').innerText="Something wrong....";
   } 
 
-
+}
 async function retrievePerson() {
   const query = new Parse.Query("Person");
   
@@ -54,9 +53,9 @@ async function updatePerson() {
         try{
             //Save the Object
             result[0].save();
-            console.log('Object updated with objectId: ' + result[0].id);
+            document.getElementById('displayUpdate').innerText="Update "+result[0]+" successfully";
         }catch(error){
-            console.log('Failed to update object, with error code: ' + error.message);
+            document.getElementById('displayUpdate').innerText="Something wrong....";
         }
     } 
 
@@ -67,11 +66,11 @@ async function deletePerson() {
             const name = document.getElementById("username2").value;
             query.equalTo("name", name);
             const result = await query.find()
+            document.getElementById('displayDelete').innerText="Delete "+result[0]+" successfully";
             result[0].destroy();
-            console.log('Object deleted with objectId: ' + result[0].id);
             
         }catch(error){
-            console.log('Failed to delete object, with error code: ' + error.message);
+            document.getElementById('displayDelete').innerText="Something wrong....";
         }
   } 
 
@@ -100,6 +99,7 @@ function App() {
             <input id="username" type="text" placeholder="Username" />
             <input id="age" type="integer" placeholder="Age" />
             <button onClick={saveNewPerson}>CreateNew</button>
+            <p id='displayCreate'></p>
           </div>
           <br />
           <br />
@@ -114,12 +114,14 @@ function App() {
             <input id="username4" type="text" placeholder="New Username" />
             <input id="age2" type="integer" placeholder="New Age" />
             <button onClick={updatePerson}>Update</button>
+            <p id='displayUpdate'></p>
           </div>
           <br />
           <br />
           <div id='delete'>
             <input id="username2" type="text" placeholder="Username" />
             <button onClick={deletePerson}>Delete!</button>
+            <p id='displayDelete'></p>
           </div>
           <br />
           <br />
