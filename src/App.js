@@ -12,7 +12,7 @@ async function saveNewPerson() {
   person.set("name", name);
   person.set("age", age);
   try {
-    let result = await person.save()
+        await person.save()
         document.getElementById('displayCreate').innerText="Create successfully";
     } catch(error) {
         document.getElementById('displayCreate').innerText="Something wrong....";
@@ -99,8 +99,8 @@ function App() {
             <input id="username" type="text" placeholder="Username" />
             <input id="age" type="integer" placeholder="Age" />
             <button onClick={saveNewPerson}>CreateNew</button>
-            <p id='displayCreate'></p>
           </div>
+          <p id='displayCreate'></p>
           <br />
           <br />
           <div id='read'>
@@ -114,15 +114,15 @@ function App() {
             <input id="username4" type="text" placeholder="New Username" />
             <input id="age2" type="integer" placeholder="New Age" />
             <button onClick={updatePerson}>Update</button>
-            <p id='displayUpdate'></p>
           </div>
+          <p id='displayUpdate'></p>
           <br />
           <br />
           <div id='delete'>
             <input id="username2" type="text" placeholder="Username" />
             <button onClick={deletePerson}>Delete!</button>
-            <p id='displayDelete'></p>
           </div>
+          <p id='displayDelete'></p>
           <br />
           <br />
           <p>By Elton Luiz Jitiako</p>
