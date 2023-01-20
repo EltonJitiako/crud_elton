@@ -5,6 +5,7 @@ Parse.initialize(process.env['REACT_APP_APP_ID'], process.env['REACT_APP_JS_KEY'
 Parse.serverURL = 'https://parseapi.back4app.com/'  
 
 async function saveNewPerson() {
+
   const person = new Parse.Object("Person");
   const name = document.getElementById("username").value;
   const age = parseInt(document.getElementById("age").value);
@@ -13,10 +14,13 @@ async function saveNewPerson() {
   person.set("age", age);
   try {
         await person.save()
-        alert("Create successfully");
-    } catch(error) {
-        alert("Something wrong....");
+        alert("Created successfully");
+
+  } catch(error) {
+          alert("Something wrong....");
+
   } 
+
 
 }
 async function retrievePerson() {
@@ -26,36 +30,40 @@ async function retrievePerson() {
     let text = "";
     query.notEqualTo("objectId", null);
     query.find().then(function(subItems){
+
       for (let i=0; i<subItems.length; i++){
-        text += "Name: " + subItems[i].get("name") + ", Age: " + subItems[i].get("age") + "; \n";
+        text += "Userame: " + subItems[i].get("name") + ", Age: " + subItems[i].get("age") + "; \n";
+
       }
+
       document.getElementById('displayDB').innerText=text;
+
     });
-  
-  
 
   } catch (error) {
     alert("Something wrong....");
+
   }
 }  
 
 async function updatePerson() {
-        const person = new Parse.Query("Person");
+        const query = new Parse.Query("Person");
 
         const name1 = document.getElementById("username3").value;
         const name2 = document.getElementById("username4").value;
         const age = parseInt(document.getElementById("age2").value);
 
-        person.equalTo("name", name1);
-        const result = await person.find()
+        query.equalTo("name", name1);
+        const result = await query.find()
         result[0].set("name", name2);
         result[0].set("age", age);
         try{
-            //Save the Object
             result[0].save();
-            alert("Update successfully");
+            alert("Updated successfully");
+
         }catch(error){
             alert("Something wrong....");
+
         }
     } 
 
@@ -67,10 +75,11 @@ async function deletePerson() {
             query.equalTo("name", name);
             const result = await query.find()
             result[0].destroy();
-            alert("Delete successfully");
+            alert("Deleted successfully");
             
         }catch(error){
             alert("Something wrong....");
+            
         }
   } 
 
