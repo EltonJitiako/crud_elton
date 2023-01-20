@@ -32,7 +32,7 @@ async function retrievePerson() {
     query.find().then(function(subItems){
 
       for (let i=0; i<subItems.length; i++){
-        text += "Userame: " + subItems[i].get("name") + ", Age: " + subItems[i].get("age") + "; \n";
+        text += "Username: " + subItems[i].get("name") + ", Age: " + subItems[i].get("age") + "; \n";
 
       }
 
@@ -79,7 +79,7 @@ async function deletePerson() {
             
         }catch(error){
             alert("Something wrong....");
-            
+
         }
   } 
 
@@ -113,7 +113,7 @@ function App() {
           <br />
           <div id='read'>
             <button onClick={retrievePerson}>ShowDB</button>
-            <h1 id='displayDB'>Show DB here!!!!</h1>
+            <p id='displayDB'>Show DB here!!!!</p>
           </div>
           <br />
           <br />
